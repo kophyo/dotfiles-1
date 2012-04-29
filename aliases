@@ -51,3 +51,154 @@ alias db-pull-staging='heroku db:pull --remote staging --confirm `basename $PWD`
 alias db-pull-production='heroku db:pull --remote production --confirm `basename $PWD`-production'
 alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging'
 alias db-backup-production='heroku pgbackups:capture --remote production'
+
+#emulate -LR sh 2>/dev/null
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+  eval "`dircolors -b`"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
+
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+
+# some more ls aliases
+alias ll='ls -l'
+alias lah='ls -lah'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias pg='ps aux | grep'
+alias psa='ps aux '
+
+
+# Git aliases for bash
+# Put in ~/.bash_profile
+
+alias spec='rspec --format documentation --color'
+alias gs='git status'
+alias gd='git diff --ignore-space-change '
+alias gl='git log '
+alias glp='git log -p'
+alias ga='git add '
+alias gdc='git diff --cached'
+alias gc='git commit -v -m '
+
+alias gpl='git pull --rebase'
+alias grc='git rebase --continue'
+alias gpo='git push origin '
+
+
+alias gf='git fetch '
+alias gb='git branch '
+alias gba='git branch -a'
+alias gco='git checkout '
+alias gk='gitk --all & '
+alias gg='gitg &'
+
+alias be='bundle exec '
+alias bi='bundle install '
+alias bil='bundle install --local'
+alias bu='bundle update '
+
+#rails 3
+alias rc='rails console'
+alias rs='rails server'
+alias rdb='rails db'
+
+#rails 2
+alias ss='script/server'
+alias sst='script/server RAILS_ENV=test'
+alias sct='script/console RAILS_ENV=test'
+alias sc='script/console '
+alias rr='rake routes '
+alias rrg='rake routes | grep '
+alias tl='tail log/development.log -n100 -f'
+alias ttr='touch tmp/restart.txt'
+
+alias sg='script/generate '
+alias sd='script/destroy '
+alias sgm='script/generate migration '
+alias sgr='script/generate rspec_controller '
+alias sgp='script/generate plugin '
+
+alias rdbm='rake db:migrate'
+alias rdbtp='rake db:test:prepare'
+alias rdbmtp='rake db:migrate; rake db:test:prepare'
+alias at='AUTOFEATURE=true be autotest'
+
+
+#http://www.huyng.com/archives/quick-bash-tip-directory-bookmarks/492/
+alias m1='alias g1="cd `pwd`"'
+alias m2='alias g2="cd `pwd`"'
+alias m3='alias g3="cd `pwd`"'
+alias m4='alias g4="cd `pwd`"'
+alias m5='alias g5="cd `pwd`"'
+alias m6='alias g6="cd `pwd`"'
+alias m7='alias g7="cd `pwd`"'
+alias m8='alias g8="cd `pwd`"'
+alias m9='alias g9="cd `pwd`"'
+alias mdump='alias|grep -e "alias g[0-9]"|grep -v "alias m" > ~/.bookmarks'
+alias lma='alias | grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
+touch ~/.bookmarks
+source ~/.bookmarks
+# modified from http://www.nanoant.com/programming/opening-specified-path-in-terminals-new-tab
+alias twd=new_terminal_working_directory
+
+
+alias syn='ruby -W1 -T1 -c '
+alias aphro='cd ~/code/aphro'
+alias blog='cd ~/code/blog'
+alias collection='cd ~/code/collection_json'
+
+
+alias argos='cd ~/shutl/argos'
+
+alias grep='grep --color '
+alias rt='rake test'
+alias bets='bundle exec thin start'
+alias betsy='bundle exec thin start'
+alias betsy='bundle exec thin start'
+alias tldr='tail -n100 -f log/development.log'
+alias gsd='sudo get-shit-done work'
+alias cuke='cucumber'
+alias gpom='git push origin master'
+alias ttar='touch tmp/always_restart.txt'
+alias thind='thin --debug --rackup config.ru start'
+alias core='cd ~/shutl/core_platform'
+alias pru="rvm 1.9.2 exec pru"
+alias wwwjdic='cd ~/code/wwwjdic/'
+
+
+alias white_label='cd ~/shutl/white_label'
+
+
+alias hubot='cd ~/shutl/hubot'
+alias fspec='rspec -Ifast_specs '
+
