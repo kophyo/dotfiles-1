@@ -292,11 +292,12 @@ nmap vspa :vsp<CR>:A<CR>
 nmap RC :only<CR> :Rcontroller<CR> :vsp<CR> :A<CR>
 nmap RM :only<CR> :Rmodel<CR> :vsp<CR> :A<CR>
 
+set t_Co=256
+colorscheme railscasts-console
+
+
 if has("gui_running")
     "tell the term has 256 colors
-    set t_Co=256
-
-    colorscheme railscasts-console
 
     set guitablabel=%M%t
     set guifont="Monaco"
@@ -332,7 +333,7 @@ else
         set term=gnome-256color
         colorscheme railscasts2
     else
-        colorscheme default
+        colorscheme railscasts-console
     endif
 endif
 " PeepOpen uses <Leader>p as well so you will need to redefine it so something
@@ -644,3 +645,9 @@ endfunction
 
 map _ys :call YankWithPrefix()<CR>
 map _yS :call YankWithPrefixAndLineNumber()<CR>
+
+if &diff
+    colorscheme railscasts-console
+endif
+
+let g:LustyJugglerSuppressRubyWarning = 1
