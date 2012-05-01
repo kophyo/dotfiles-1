@@ -29,10 +29,13 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby lighthouse compleat heroku github git-flow brew bundler node npm nyan osx pow powder pip rails3 rake redis-cli)
+plugins=(git rails ruby lighthouse compleat heroku github git-flow brew
+node npm nyan osx pow powder pip rails3 rake redis-cli)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 
 # Customize to your needs...
 export PATH=/Users/markburns/.rvm/gems/ruby-1.9.3-p194/bin:/Users/markburns/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/markburns/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/markburns/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export JAVA_OPTS="-d32 -Xms512M -Xmx512M"
+export JRUBY_OPTS="--1.9 -X-C"
